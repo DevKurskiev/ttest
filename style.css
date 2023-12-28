@@ -1,0 +1,19 @@
+#phraseContainer {
+  text-align: center;
+  margin-top: 200px;
+}
+
+#phraseText {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#generateButton {
+  background-color: #2196f3;
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Генератор фраз</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mui/5.0.0-beta.3/css/mui.min.css" integrity="sha512-XJdRmLq2Dg2X4jCv+SFHcZ2cquVZLp9gZUd6t3KSz/p3R0JrXJLjRyW3Yt5JyGnF9ZjzrC3XW8ZCT9ZFcYKjjA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .phrase {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .btn-generate {
+      background-color: #2196f3;
+      color: white;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p class="phrase" id="phraseText"></p>
+    <button class="btn-generate" onclick="generatePhrase()">Генерировать фразу</button>
+  </div>
+
+  <script>
+    const phrases = [
+      'К1езиг дар тхо',
+      'Рестарт отт ер оаш',
+      'Игра ловз безам бацар тха',
+      'Отказываемся принять ножи',
+      'Тхо иша дац',
+      'Со ловзаш вацар',
+      'Читер ва хьо',
+      'Хьач хьеж шо',
+      'Хьач хьежац аьлач тешаг вац',
+      'Крысить ду оаш',
+      'AWP яцар суг',
+      'Ящикаш б1ех ер',
+      'Яшкаш яцар',
+      'Урсаш детт доахькхар тхо',
+    ]
+
+    function getRandomUniqueArrayElement() {
+      if (phrases.length === 0) {
+        return 'Бахьанаш даса дац'; // Возвращаем null, если массив пустой
+      }
+
+      const randomIndex = Math.floor(Math.random() * phrases.length);
+      const randomElement = phrases[randomIndex];
+
+      phrases.splice(randomIndex, 1); // Удаляем выбранный элемент из массива
+
+      return randomElement;
+    }
+
+    function generatePhrase() {
+      const randomElement = getRandomUniqueArrayElement(phrases);
+      document.getElementById('phraseText').textContent = randomElement;
+    }
+  </script>
+</body>
+</html>
